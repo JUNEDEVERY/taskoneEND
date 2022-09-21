@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TwoWindow">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FBFBFB"
+        tools:context=".MainActivity"
+
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shadowColor="@color/black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:text="ADD"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/Dish"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/Dish"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/DISH"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/Weight"
+            app:layout_constraintEnd_toStartOf="@+id/Price"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/heading"
+            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        <EditText
+            android:id="@+id/Price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/PRICE"
+            android:minHeight="48dp"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@id/Weight"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/Dish"
+            app:layout_constraintTop_toBottomOf="@id/heading" />
+
+        <EditText
+            android:id="@+id/Weight"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/WEIGHT"
+
+            android:inputType="numberDecimal"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toTopOf="@+id/button_table"
+            app:layout_constraintEnd_toEndOf="@+id/Price"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Dish"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <TableRow
+            android:id="@+id/button_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/Weight">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnAdd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="#9ED0E8"
+                android:onClick="inputSQL"
+                android:shadowColor="@color/black"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="1"
+                android:text="ADD" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnClear"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:layout_weight="1"
+                android:background="#9ED0E8"
+                android:shadowColor="@color/black"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="1"
+                android:text="CLEAR" />
+
+        </TableRow>
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_table"
+            app:srcCompat="@drawable/restaurantmenu" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TableRow
+        android:id="@+id/tableRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnGoToBack"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#9ED0E8"
+            android:shadowColor="@color/black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:text="BACK" />
+
+    </TableRow>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

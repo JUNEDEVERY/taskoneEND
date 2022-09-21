@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">GerasimovTaskOne</string>
+    <string name="Menu">Menu</string>
+    <string name="ID">ID</string>
+    <string name="DISH">DISH</string>
+    <string name="PRICE">PRICE</string>
+    <string name="WEIGHT">WEIGHT</string>
+    <string name="NEXT">NEXT WINDOW</string>
+    <string name="Con">Conclusion</string>
+
+
+</resources>
