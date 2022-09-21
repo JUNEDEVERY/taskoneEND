@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -98,9 +99,10 @@ public class TwoWindow extends AppCompatActivity {
 //              запускаем запрос из sql
                 Statement statement = connection.createStatement();
                 statement.executeUpdate(query);
+                Toast.makeText(this, "Успешное добавление", Toast.LENGTH_LONG).show();
 
             } else {
-                errorMessage = "Error Connection!";
+                errorMessage = "Добавить товар в меню не получилось. Попробуйте еще раз.";
             }
         } catch (Exception ex) {
             errorMessage = "TRY CONNECTION!";
