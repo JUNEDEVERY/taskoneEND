@@ -89,6 +89,16 @@
 
         </TableRow>
 
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:onClick="Picture"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_table" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -126,6 +136,21 @@
             android:shadowDy="1"
             android:shadowRadius="1"
             android:text="BACK" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/deletePhoto"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1"
+            android:background="#9ED0E8"
+            android:onClick="deletePicture"
+            android:shadowColor="@color/black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+
+            android:shadowRadius="1"
+            android:text="DELETE PHOTO" />
 
     </TableRow>
 

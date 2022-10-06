@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -22,11 +24,49 @@ public class ThreeWindow extends AppCompatActivity {
     Connection connection;
     String errorMessage = "";
 
+    public void SearchMenu(View v){
+        String query = "select * from Menu";
+        Spinner spinner1 = findViewById(R.id.spinner1);
+        EditText editText = findViewById(R.id.editText1);
+
+        if(spinner1.getSelectedItem().toString().equals("")){
+            if(!editText.getText().toString().equals("")){
+                query = "select *from Menu where Dish = '" + editText.getText().toString() + "'" ;
+            }
+
+        }
+
+        else{
+            if(!editText.getText().toString().equals("")){
+                query = "select * from Menu where Dish = '" + editText.getText().toString() +  "' order by " + spinner1.getSelectedItem().toString();
+            }
+            else{
+                query = "select * from Menu order by " + spinner1.getSelectedItem().toString();
+            }
+
+        }
+
+        UpdateTable(query);
+    }
+
+public void Clear(View v){
+
+    Spinner spinner1 = findViewById(R.id.spinner1);
+    EditText editText = findViewById(R.id.editText1);
+
+    spinner1.setSelection(0);
+    editText.setText("");
+    UpdateTable("select * from Menu");
+
+
+}
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_three_window);
-        UpdateTable();
+        UpdateTable("select * from Menu");
 
         Button btnGoToBack = (Button) findViewById(R.id.btnGoToBack);
         //слушатель кнопки
@@ -41,14 +81,13 @@ public class ThreeWindow extends AppCompatActivity {
         btnGoToBack.setOnClickListener(oclbtnGoToBack);
     }
 
-    public void UpdateTable() {
+    public void UpdateTable(String query) {
         TableLayout dbOutput = findViewById(R.id.dbOutput);
         dbOutput.removeAllViews();
         try {
             DBhelper dBhelper = new DBhelper();
             connection = dBhelper.connectionClass();
             if (connection != null) {
-                String query = "select * from Menu";
                 Statement statement = connection.createStatement();
                 ResultSet resultSet = statement.executeQuery(query);
 

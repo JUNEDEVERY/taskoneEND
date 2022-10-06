@@ -8,5 +8,11 @@
     <string name="NEXT">NEXT WINDOW</string>
     <string name="Con">Conclusion</string>
 
+    <string-array name="spinner1">
+        <item></item>
+        <item>Price</item>
+        <item>Weight</item>
+    </string-array>
+
 
 </resources>
