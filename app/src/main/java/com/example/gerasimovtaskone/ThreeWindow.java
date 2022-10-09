@@ -34,6 +34,7 @@ public class ThreeWindow extends AppCompatActivity {
                 query = "select *from Menu where Dish = '" + editText.getText().toString() + "'" ;
             }
 
+
         }
 
         else{
@@ -49,6 +50,10 @@ public class ThreeWindow extends AppCompatActivity {
         UpdateTable(query);
     }
 
+
+    public void clickText(View v){
+        Toast.makeText(this, "Пожалуйста, введите полное название блюда", Toast.LENGTH_LONG).show();
+    }
 public void Clear(View v){
 
     Spinner spinner1 = findViewById(R.id.spinner1);

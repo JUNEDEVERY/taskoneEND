@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/GerasimovTaskOne-master/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2005" />
+        <entry key="..\:/GerasimovTaskOne-master/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2005" />
         <entry key="..\:/GerasimovTaskOne-master/app/src/main/res/layout/activity_five_window.xml" value="0.33" />
         <entry key="..\:/GerasimovTaskOne-master/app/src/main/res/layout/activity_four_window.xml" value="0.25" />
         <entry key="..\:/GerasimovTaskOne-master/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
