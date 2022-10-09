@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
 
             if (connection != null) {
-                String query = "Select  ID, Dish, Price, Weight from Menu";
+                String query = "select  id, dish, price, weight from menu";
 
 //              запускаем запрос из sql
                 Statement statement = connection.createStatement();

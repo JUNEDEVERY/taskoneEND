@@ -34,9 +34,10 @@ public class FourWindow extends AppCompatActivity {
     EditText Weight;
     Button btnClear;
 
-    int i;
+
     Connection connection;
     String errorMessage = "";
+    int i;
 
     ActivityResultLauncher<Intent> someActivityResultLauncher = registerForActivityResult( // вывов диалогового окна
             new ActivityResultContracts.StartActivityForResult(),
@@ -84,10 +85,10 @@ public class FourWindow extends AppCompatActivity {
             if(connection != null) {
                 String query;
                 if(varcharPicture == ""){
-                    query = "update menu set picture = null where ID = " + i;
+                    query = "update menu set picture = null where id = " + i;
                 }
                 else{
-                    query = "update menu set picture = '" + varcharPicture + "' where ID = " + i;
+                    query = "update menu set picture = '" + varcharPicture + "' where id = " + i;
                 }
                 Statement statement = connection.createStatement();
                 statement.executeUpdate(query);
@@ -107,7 +108,7 @@ public class FourWindow extends AppCompatActivity {
 
     public void Picture(View v){
         Intent photo = new Intent(Intent.ACTION_PICK);
-        photo.setType("image/*"); // ищем любую картинку с типом jpg png
+        photo.setType("image/*"); // ищем любую картинку с типом jpg or png
         someActivityResultLauncher.launch(photo);
 
 
@@ -234,7 +235,7 @@ public class FourWindow extends AppCompatActivity {
             connection = dBhelper.connectionClass();
 
             if (connection != null) {
-                String query = "select * from Menu where ID = " + i;
+                String query = "select * from Menu where id = " + i;
 //              запускаем запрос из sql
                 Statement statement = connection.createStatement();
                 ResultSet resultSet = statement.executeQuery(query);

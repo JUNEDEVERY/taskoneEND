@@ -31,7 +31,7 @@ public class ThreeWindow extends AppCompatActivity {
 
         if(spinner1.getSelectedItem().toString().equals("")){
             if(!editText.getText().toString().equals("")){
-                query = "select *from Menu where Dish = '" + editText.getText().toString() + "'" ;
+                query = "select * from menu where Dish = '" + editText.getText().toString() + "'" ;
             }
 
 
@@ -39,10 +39,10 @@ public class ThreeWindow extends AppCompatActivity {
 
         else{
             if(!editText.getText().toString().equals("")){
-                query = "select * from Menu where Dish = '" + editText.getText().toString() +  "' order by " + spinner1.getSelectedItem().toString();
+                query = "select * from menu where Dish = '" + editText.getText().toString() +  "' order by " + spinner1.getSelectedItem().toString();
             }
             else{
-                query = "select * from Menu order by " + spinner1.getSelectedItem().toString();
+                query = "select * from menu order by " + spinner1.getSelectedItem().toString();
             }
 
         }
@@ -61,7 +61,7 @@ public void Clear(View v){
 
     spinner1.setSelection(0);
     editText.setText("");
-    UpdateTable("select * from Menu");
+    UpdateTable("select * from menu");
 
 
 }
@@ -71,7 +71,7 @@ public void Clear(View v){
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_three_window);
-        UpdateTable("select * from Menu");
+        UpdateTable("select * from menu");
 
         Button btnGoToBack = (Button) findViewById(R.id.btnGoToBack);
         //слушатель кнопки

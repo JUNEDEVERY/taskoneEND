@@ -57,6 +57,7 @@ public class TwoWindow extends AppCompatActivity {
         Dish = findViewById(R.id.Dish);
         Weight = findViewById(R.id.Weight);
         btnClear = findViewById(R.id.btnClear);
+
         btnClear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -94,7 +95,7 @@ public class TwoWindow extends AppCompatActivity {
             DBhelper dBhelper = new DBhelper();
             connection = dBhelper.connectionClass();
             if (connection != null) {
-                String query = "Insert into Menu(Dish, Price, Weight)" +
+                String query = "insert into menu(Dish, Price, Weight)" +
                         " Values('" + Dish.getText() + "', '" + Price.getText() + "', '" + Weight.getText() + "')";
 //              запускаем запрос из sql
                 Statement statement = connection.createStatement();
